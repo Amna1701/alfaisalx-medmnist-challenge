@@ -67,7 +67,7 @@ Full written analysis:
 
 ## Reproducibility
 
-This project can be reproduced on a standard CPU environment.
+This project runs on CPU and can be reproduced using Jupyter Notebook or Google Colab.
 
 ### 1. Install dependencies
 
