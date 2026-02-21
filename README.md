@@ -67,7 +67,9 @@ Full written analysis:
 
 ## Reproducibility
 
-Install dependencies:
+This project can be reproduced on a standard CPU environment.
+
+### 1. Install dependencies
 
 ```bash
 pip install -r requirements.txt
