@@ -6,6 +6,3 @@ pandas
 matplotlib
 scikit-learn
 tqdm
-faiss-cpu
-timm
-transformers
