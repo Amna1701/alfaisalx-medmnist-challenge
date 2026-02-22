@@ -1,0 +1,1 @@
+you are a radiologist. write 2 sentences : ( 1 ) findings, ( 2 ) impression. 2
