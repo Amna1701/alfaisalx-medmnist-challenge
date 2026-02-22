@@ -1,75 +1,45 @@
-# AlfaisalX Postdoctoral Technical Challenge  
-MedX Research Unit – Cognitive Robotics & Autonomous Agents  
+# AlfaisalX Postdoctoral Technical Challenge – PneumoniaMNIST
 
-This repository contains my submission for the 7-Day Postdoctoral Technical Challenge based on the PneumoniaMNIST dataset (MedMNIST v2).
-
----
-
-## Repository Structure
-
-- `notebooks/` – Colab/Jupyter implementation
-- `reports/` – Task reports and generated figures
-- `requirements.txt` – Python dependencies
+This repository presents a complete experimental pipeline addressing classification, multimodal report generation, and representation-based retrieval on the PneumoniaMNIST dataset.
 
 ---
 
-# Task 1 – CNN Classification on PneumoniaMNIST
+## Task 1 – Supervised Pneumonia Classification
 
-## Objective
-Binary classification of chest X-ray images (Normal vs Pneumonia).
+A deep convolutional neural network was trained for binary chest X-ray classification (normal vs pneumonia). The study includes:
 
-## Model Architecture
-Lightweight CNN:
-- 3 convolutional blocks
-- ReLU activations
-- MaxPooling layers
-- Adaptive average pooling
-- Final linear layer (1 logit)
+- Training and validation loss curves  
+- ROC curve and AUC analysis  
+- Confusion matrix evaluation  
+- Structured performance reporting  
 
-## Training Setup
-- Loss: BCEWithLogitsLoss
-- Optimizer: Adam
-- Learning rate: 1e-3
-- Epochs: 15
-- Runs on CPU
+These analyses assess diagnostic reliability and model generalization.
 
 ---
 
-## Performance (Test Set)
+## Task 2 – Vision-Language Report Generation
 
-| Metric     | Value |
-|------------|--------|
-| Accuracy   | 0.886 |
-| Precision  | 0.857 |
-| Recall     | 0.982 |
-| F1-score   | 0.915 |
-| AUC        | 0.942 |
+A pretrained BLIP vision-language model was used to generate structured radiology-style findings and impressions directly from chest X-ray images.
 
-High recall (0.982) indicates strong sensitivity for pneumonia detection, which is desirable in medical screening contexts.
+The pipeline demonstrates multimodal reasoning by linking visual features to coherent clinical text outputs. Generated reports are stored alongside corresponding images for qualitative inspection.
 
 ---
 
-## Saved Outputs
+## Task 3 – Embedding-Based Image Retrieval
 
-Figures are stored in:
+High-level visual embeddings were extracted from chest X-ray images and indexed using FAISS for efficient similarity search.
 
-`reports/task1/`
+Evaluation includes:
 
-- training_curves.png  
-- confusion_matrix.png  
-- roc_curve.png  
-- failure_cases.png  
+- Embedding extraction and storage  
+- FAISS index construction  
+- Recall@K metrics  
+- Qualitative nearest-neighbor visualization  
 
-Full written analysis:
-`reports/task1_classification_report.md`
+This task evaluates semantic consistency and representation quality in a retrieval setting.
 
 ---
 
-## Reproducibility
+## Summary
 
-This project runs on CPU and can be reproduced using Jupyter Notebook or Google Colab.
-
-### 1. Install dependencies
-
-```bash
-pip install -r requirements.txt
+Together, these tasks demonstrate supervised learning, multimodal modeling, and representation learning within a unified medical imaging framework.
